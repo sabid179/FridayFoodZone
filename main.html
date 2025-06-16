@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Friday Food Zone - Waffles and More</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --teal: #008080;
+                --teal-light: #20b2aa;
+                --teal-dark: #006666;
+                --accent: #ff6b35;
+                --light: #f5fdfd;
+                --dark: #1a3c3c;
+                --gray: #e0f2f1;
+                --border: #b2dfdb;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Poppins", sans-serif;
+                background-color: var(--light);
+                color: var(--dark);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                font-family: "Montserrat", sans-serif;
+                color: var(--dark);
+            }
+
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+
+            /* Header Styles */
+            header {
+                background: linear-gradient(
+                        rgba(0, 0, 0, 0.7),
+                        rgba(0, 0, 0, 0.7)
+                    ),
+                    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920")
+                        center/cover;
+                color: white;
+                padding: 20px 0;
+                text-align: center;
+                position: relative;
+            }
+
+            .top-bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            .logo {
+                font-size: 32px;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+            }
+
+            .logo span {
+                color: var(--teal-light);
+            }
+
+            .contact-info {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 16px;
+            }
+
+            /* Navigation */
+            nav {
+                background-color: white;
+                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .nav-container {
+                display: flex;
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 30px;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: var(--dark);
+                font-weight: 500;
+                font-size: 16px;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                color: var(--teal);
+            }
+
+            .nav-links a::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--teal);
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 100px 0;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+                margin-bottom: 20px;
+                color: white;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .hero p {
+                font-size: 20px;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .btn {
+                display: inline-block;
+                background-color: var(--teal);
+                color: white;
+                padding: 14px 35px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 18px;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(0, 128, 128, 0.4);
+            }
+
+            .btn:hover {
+                background-color: var(--teal-dark);
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(0, 128, 128, 0.5);
+            }
+
+            /* Menu Section */
+            .section-title {
+                text-align: center;
+                margin: 60px 0 40px;
+            }
+
+            .section-title h2 {
+                font-size: 40px;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-title h2::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background-color: var(--teal);
+                border-radius: 2px;
+            }
+
+            .section-title p {
+                font-size: 18px;
+                color: #666;
+                max-width: 600px;
+                margin: 15px auto 0;
+            }
+
+            .menu-categories {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+
+            .category-btn {
+                background-color: white;
+                border: 1px solid var(--border);
+                padding: 10px 20px;
+                border-radius: 30px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .category-btn:hover,
+            .category-btn.active {
+                background-color: var(--teal);
+                color: white;
+                border-color: var(--teal);
+            }
+
+            .menu-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 25px;
+            }
+
+            .menu-category {
+                background-color: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s ease;
+            }
+
+            .menu-category:hover {
+                transform: translateY(-10px);
+            }
+
+            .category-header {
+                background: linear-gradient(
+                    to right,
+                    var(--teal),
+                    var(--teal-light)
+                );
+                color: white;
+                padding: 15px 20px;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .category-items {
+                padding: 20px;
+            }
+
+            .menu-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 12px 0;
+                border-bottom: 1px dashed var(--border);
+            }
+
+            .menu-item:last-child {
+                border-bottom: none;
+            }
+
+            .item-name {
+                font-weight: 500;
+            }
+
+            .item-price {
+                color: var(--teal);
+                font-weight: 600;
+            }
+
+            /* Offers Section */
+            .offers-section {
+                background-color: var(--gray);
+                padding: 60px 0;
+            }
+
+            .combo-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 30px;
+            }
+
+            .combo-card {
+                background-color: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+                transition: transform 0.3s ease;
+            }
+
+            .combo-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .combo-header {
+                background: linear-gradient(
+                    to right,
+                    var(--teal),
+                    var(--teal-light)
+                );
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .combo-header h3 {
+                font-size: 24px;
+                margin-bottom: 5px;
+            }
+
+            .combo-body {
+                padding: 25px;
+            }
+
+            .combo-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+                border-bottom: 1px dashed #eee;
+            }
+
+            .combo-price {
+                text-align: center;
+                padding: 20px;
+                background-color: rgba(0, 128, 128, 0.1);
+                border-top: 2px solid var(--teal);
+            }
+
+            .original-price {
+                text-decoration: line-through;
+                color: #999;
+                font-size: 18px;
+                margin-right: 10px;
+            }
+
+            .discounted-price {
+                font-size: 28px;
+                font-weight: 700;
+                color: var(--teal);
+            }
+
+            .discount-badge {
+                background-color: var(--accent);
+                color: white;
+                font-weight: 600;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 16px;
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            /* Contact Section */
+            .contact-section {
+                background-color: var(--dark);
+                color: white;
+                padding: 80px 0;
+            }
+
+            .contact-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+
+            .contact-info-card {
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 30px;
+                border-radius: 15px;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-info-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .contact-icon {
+                font-size: 40px;
+                color: var(--teal-light);
+                margin-bottom: 20px;
+            }
+
+            .contact-info-card h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+                color: white;
+            }
+
+            .contact-info-card p {
+                font-size: 18px;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            /* Footer */
+            footer {
+                background-color: #0d2c2c;
+                color: rgba(255, 255, 255, 0.7);
+                padding: 40px 0 20px;
+                text-align: center;
+            }
+
+            .footer-content {
+                max-width: 600px;
+                margin: 0 auto 30px;
+            }
+
+            .social-links {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+
+            .social-links a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                color: white;
+                font-size: 18px;
+                transition: all 0.3s ease;
+            }
+
+            .social-links a:hover {
+                background-color: var(--teal-light);
+                transform: translateY(-3px);
+            }
+
+            .copyright {
+                padding-top: 30px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .top-bar {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .hero {
+                    padding: 60px 0;
+                }
+
+                .hero h1 {
+                    font-size: 36px;
+                }
+
+                .hero p {
+                    font-size: 18px;
+                    padding: 0 15px;
+                }
+
+                .nav-links {
+                    gap: 15px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                .menu-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .combo-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <div class="container">
+                <div class="top-bar">
+                    <div class="logo">FRIDAY <span>FOOD ZONE</span></div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            +8801632065779
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            10AM - 10PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="container">
+                    <h1>Waffles and More...</h1>
+                    <p>
+                        Serving the best waffles, momos, and traditional dishes
+                        in Dhaka since 2025
+                    </p>
+                    <a href="#menu" class="btn">Explore Our Menu</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <div class="container nav-container">
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#combos">Combos</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Complete Menu</h2>
+                    <p>All your favorite dishes in one place</p>
+                </div>
+
+                <div class="menu-categories">
+                    <button class="category-btn active">All Categories</button>
+                    <button class="category-btn">Rice</button>
+                    <button class="category-btn">Appetizers</button>
+                    <button class="category-btn">Meat Box</button>
+                    <button class="category-btn">Pasta</button>
+                    <button class="category-btn">Chawmin</button>
+                    <button class="category-btn">Soup</button>
+                    <button class="category-btn">Salad</button>
+                    <button class="category-btn">Coffee</button>
+                    <button class="category-btn">Juice</button>
+                    <button class="category-btn">Momo</button>
+                    <button class="category-btn">Waffle</button>
+                    <button class="category-btn">Burger</button>
+                    <button class="category-btn">Deshi Food</button>
+                    <button class="category-btn">Fries</button>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- Rice Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Rice</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Rice Combo 1</span>
+                                <span class="item-price">200/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Mexican Rice Boil</span>
+                                <span class="item-price">250/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chicken Sausage Fried Rice</span
+                                >
+                                <span class="item-price">250/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appetizers Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Appetizers</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">French Fries</span>
+                                <span class="item-price">120/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >French Fries Loaded</span
+                                >
+                                <span class="item-price">140/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Cheese Blazed French Fries</span
+                                >
+                                <span class="item-price">180/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Onthon - 6pcs</span>
+                                <span class="item-price">120/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meat Box Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Meat Box</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Regular Meat 80%</span>
+                                <span class="item-price">80/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Mexican Meat 90%</span>
+                                <span class="item-price">90/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chicken Sausage Meat Box</span
+                                >
+                                <span class="item-price">-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Mix Meat Box</span>
+                                <span class="item-price">-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chicken Meat Ball 1ps</span
+                                >
+                                <span class="item-price">50/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pasta Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Pasta</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chicken Korai Pasta</span
+                                >
+                                <span class="item-price">170/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">White Korai Pasta</span>
+                                <span class="item-price">220/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chawmin Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Chawmin</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Chicken Chawmin</span>
+                                <span class="item-price">-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Egg Chawmin</span>
+                                <span class="item-price">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soup Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Soup</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Thai Soup</span>
+                                <span class="item-price">150/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Corn Soup</span>
+                                <span class="item-price">-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Thai Clear Soup</span>
+                                <span class="item-price">150/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Salad Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Salad</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Coshewnut Salad 1-2</span
+                                >
+                                <span class="item-price">370/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Coshewnut Salad 1-3</span
+                                >
+                                <span class="item-price">500/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coffee Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Coffee</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Cold Coffee</span>
+                                <span class="item-price">100/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Hot Coffee</span>
+                                <span class="item-price">80/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chocolate Hot Coffee</span
+                                >
+                                <span class="item-price">140/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Blue Legon</span>
+                                <span class="item-price">110/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Crimson Drink</span>
+                                <span class="item-price">100/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Vanilla Milkshake</span>
+                                <span class="item-price">130/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chocolate Milkshake</span
+                                >
+                                <span class="item-price">130/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Strawberry Milkshake</span
+                                >
+                                <span class="item-price">150/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Oreo Milkshake</span>
+                                <span class="item-price">140/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Banana Milkshake (Vanilla)</span
+                                >
+                                <span class="item-price">150/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Juice Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Juice</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Seasonal Juice</span>
+                                <span class="item-price">-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Malta Juice</span>
+                                <span class="item-price">120/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Orange Juice</span>
+                                <span class="item-price">110/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Apple Juice</span>
+                                <span class="item-price">130/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Papaya Juice</span>
+                                <span class="item-price">100/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Lemon Juice</span>
+                                <span class="item-price">80/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Pineapple Juice</span>
+                                <span class="item-price">110/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Grape Juice</span>
+                                <span class="item-price">140/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Sour Juice</span>
+                                <span class="item-price">-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Sweet Juice</span>
+                                <span class="item-price">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Momo Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Momo</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Vegetable Momo</span>
+                                <span class="item-price">115/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Chicken Momo</span>
+                                <span class="item-price">130/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Fried Momo</span>
+                                <span class="item-price">130/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Cheesy Momo</span>
+                                <span class="item-price">170/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Waffle Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Waffle</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Chocolate Waffle</span>
+                                <span class="item-price">140/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Blueberry Waffle</span>
+                                <span class="item-price">210/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chocolate Pisto Seo Waffle</span
+                                >
+                                <span class="item-price">180/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Vanilla Waffle</span>
+                                <span class="item-price">170/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Kitkat Waffle</span>
+                                <span class="item-price">190/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Nuts Miniya Waffle</span
+                                >
+                                <span class="item-price">170/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Strawberry Waffle</span>
+                                <span class="item-price">200/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Burger Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Burger</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chicken Cheese Burger</span
+                                >
+                                <span class="item-price">160/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Naga Burger</span>
+                                <span class="item-price">170/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">BBQ Burger</span>
+                                <span class="item-price">170/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Fusion Burger</span>
+                                <span class="item-price">260/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Beef Burger</span>
+                                <span class="item-price">220/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deshi Food Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Deshi Food</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Regular Fuchka 6pcs</span
+                                >
+                                <span class="item-price">60/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Special Fuchka 10pcs</span
+                                >
+                                <span class="item-price">100/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Doi Fuchka 6pcs</span>
+                                <span class="item-price">100/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Regular Jalmuri</span>
+                                <span class="item-price">30/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Dim Muri</span>
+                                <span class="item-price">60/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Chicken Chui Muri</span>
+                                <span class="item-price">100/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Special Nobabi Muri</span
+                                >
+                                <span class="item-price">150/-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fries Category -->
+                    <div class="menu-category">
+                        <div class="category-header">Fries</div>
+                        <div class="category-items">
+                            <div class="menu-item">
+                                <span class="item-name">Chicken Fry</span>
+                                <span class="item-price">90/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Thai Chicken</span>
+                                <span class="item-price">130/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Garlic Chicken</span>
+                                <span class="item-price">110/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Naga Chicken</span>
+                                <span class="item-price">170/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">Dram Stick 6pcs</span>
+                                <span class="item-price">220/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name"
+                                    >Chicken Wings 4pcs</span
+                                >
+                                <span class="item-price">160/-</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name">BBQ Chicken</span>
+                                <span class="item-price">170/-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Combo Section -->
+        <section id="combos" class="offers-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Special Combo Offers</h2>
+                    <p>Save more with our specially curated combos</p>
+                </div>
+
+                <div class="combo-grid">
+                    <!-- Combo 1 -->
+                    <div class="combo-card">
+                        <div class="combo-header">
+                            <h3>Waffle Lover's Combo</h3>
+                            <p>Perfect for waffle enthusiasts</p>
+                        </div>
+                        <div class="combo-body">
+                            <div class="combo-item">
+                                <span>Chocolate Waffle</span>
+                                <span>৳140</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>Strawberry Milkshake</span>
+                                <span>৳150</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>French Fries</span>
+                                <span>৳120</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>Total Value</span>
+                                <span>৳410</span>
+                            </div>
+                        </div>
+                        <div class="combo-price">
+                            <span class="original-price">৳410</span>
+                            <span class="discounted-price">৳350</span>
+                            <div class="discount-badge">Save ৳60 (15%)</div>
+                        </div>
+                    </div>
+
+                    <!-- Combo 2 -->
+                    <div class="combo-card">
+                        <div class="combo-header">
+                            <h3>Momo Feast Combo</h3>
+                            <p>For momo lovers</p>
+                        </div>
+                        <div class="combo-body">
+                            <div class="combo-item">
+                                <span>Chicken Momo (10pcs)</span>
+                                <span>৳130</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>Vegetable Momo (10pcs)</span>
+                                <span>৳115</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>Thai Soup</span>
+                                <span>৳150</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>Total Value</span>
+                                <span>৳395</span>
+                            </div>
+                        </div>
+                        <div class="combo-price">
+                            <span class="original-price">৳395</span>
+                            <span class="discounted-price">৳340</span>
+                            <div class="discount-badge">Save ৳55 (14%)</div>
+                        </div>
+                    </div>
+
+                    <!-- Combo 3 -->
+                    <div class="combo-card">
+                        <div class="combo-header">
+                            <h3>Burger Mania Combo</h3>
+                            <p>Ultimate burger experience</p>
+                        </div>
+                        <div class="combo-body">
+                            <div class="combo-item">
+                                <span>Chicken Cheese Burger</span>
+                                <span>৳160</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>French Fries Loaded</span>
+                                <span>৳140</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>Cold Coffee</span>
+                                <span>৳100</span>
+                            </div>
+                            <div class="combo-item">
+                                <span>Total Value</span>
+                                <span>৳400</span>
+                            </div>
+                        </div>
+                        <div class="combo-price">
+                            <span class="original-price">৳400</span>
+                            <span class="discounted-price">৳350</span>
+                            <div class="discount-badge">Save ৳50 (12.5%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+880 1632 065 779</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Address</h3>
+                        <p>
+                            Near to Hospital Gate, Dhaka Road, Sakhipur, Tangail
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Opening Hours</h3>
+                        <p>Everyday: 10:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <h3>Friday Food Zone</h3>
+                    <p>
+                        Serving delicious food since 2025 with passion and
+                        quality ingredients
+                    </p>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/16VnLE7TTA/"
+                        ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a href="https://wa.me/+8801303729032"
+                        ><i class="fab fa-whatsapp"></i
+                    ></a>
+                </div>
+
+                <div class="copyrigh">
+                    <p>Developer: Md. Rakibul Islam Sabid</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Simple category filtering
+            document.addEventListener("DOMContentLoaded", function () {
+                const categoryBtns = document.querySelectorAll(".category-btn");
+                const menuCategories =
+                    document.querySelectorAll(".menu-category");
+
+                categoryBtns.forEach((btn) => {
+                    btn.addEventListener("click", function () {
+                        // Remove active class from all buttons
+                        categoryBtns.forEach((b) =>
+                            b.classList.remove("active")
+                        );
+
+                        // Add active class to clicked button
+                        this.classList.add("active");
+
+                        const category = this.textContent.trim();
+
+                        if (category === "All Categories") {
+                            menuCategories.forEach(
+                                (cat) => (cat.style.display = "block")
+                            );
+                        } else {
+                            menuCategories.forEach((cat) => {
+                                const header =
+                                    cat.querySelector(
+                                        ".category-header"
+                                    ).textContent;
+                                if (header === category) {
+                                    cat.style.display = "block";
+                                } else {
+                                    cat.style.display = "none";
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

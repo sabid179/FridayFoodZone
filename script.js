@@ -154,7 +154,7 @@ const comboData = [
             { name: "French Fries", price: "99/-" },
         ],
         originalPrice: 367,
-        discountedPrice: 300,
+        discountedPrice: 330,
     },
     {
         name: "Momo Feast Combo",
@@ -165,7 +165,7 @@ const comboData = [
             { name: "Thai Soup", price: "129/-" },
         ],
         originalPrice: 545,
-        discountedPrice: 450,
+        discountedPrice: 464,
     },
     {
         name: "Burger Mania Combo",
@@ -176,7 +176,7 @@ const comboData = [
             { name: "Cold Coffee", price: "99/-" },
         ],
         originalPrice: 407,
-        discountedPrice: 350,
+        discountedPrice: 366,
     },
 ];
 

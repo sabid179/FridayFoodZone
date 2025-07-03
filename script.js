@@ -129,9 +129,11 @@ const menuData = [
     {
         category: "Sandwich",
         items: [
-            { name: "Mixciken Sanduiche", price: "159/-" },
-            { name: "B. B. Q Sanduiche", price: "149/-" },
-            { name: "Naga Sanduiche", price: "149/-" },
+            { name: "Sweet Chicken Sandwich", price: "79/-" },
+            { name: "Sub Sandwich", price: "119/-" },
+            { name: "Mixciken Sandwich", price: "159/-" },
+            { name: "B. B. Q. Sandwich", price: "149/-" },
+            { name: "Naga Sandwich", price: "149/-" },
         ],
     },
     {
